@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>www.memieosuga.com</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<link href="https://fonts.googleapis.com/css?family=Heebo:100,300,400,500,700,800,900" rel="stylesheet">
+</head>
+
+
+<body>
+
+<!-- -------------SIDEBAR---------------- -->
+	<div class="side">
+		<a href="index.html"> <img src="melogo.png" style="width: 60%; padding-bottom: 10%";></a>
+		<h3 onclick="openModule('about')"> ABOUT </h3>
+		<h3 onclick="openModule('shorts')">SHORTS</h3>
+		<h3 onclick="openModule('3dmodelling')">3D MODELLING</h3>
+		<h3 onclick="openModule('scores')">SCORES</h3>
+		<h3 onclick="openModule('other')">OTHER</h3>
+		<div class="socialicons">
+			<a href="https://www.youtube.com/channel/UCOT-PLU-Odom9vtbaXi4s8A"> <img src="youtube.png"> </a>
+			<a href="https://vimeo.com/user79958699"> <img src="vimeo.png"></a>
+		</div>
+	</div>
+
+<!-- --------------CONTENT----------------- -->
+	<div class="content"> 
+		<div id="about" style="display: none;">
+			<h2> Memie Osuga </h2>
+		</div>
+		<div id="shorts" style="display: none;">
+			<h1> Shorts</h1>
+		</div>
+		<div id="3dmodelling" style="display: none;">
+			<h1> 3D Modelling </h1>
+		</div>
+		<div id="scores" style="display: none;">
+			<h1> Scores </h1>
+		</div>
+		<div id="other" style="display: none;">
+			<h1> Dabbling in other things </h1>
+		</div>
+	</div>
+
+<!-- ----------------FOOTER------------ -->
+	<div class="footer"> 
+		<div id="footertextbox">
+		<p> SAY HELLO! </p>
+		<p style="font-size: .4em;"> &copy Copyright Memie Osuga 2019</p>
+		</div>
+		<form action="contact.php">
+			<div id="formbox1">
+			Your Name <input type="text" name="yourname" style= "width: 60%;"><br><br>
+			Your Email <input type="text" name="youremail" style= "width: 60%;">
+			</div>
+			<div id="formbox2">
+			Message &nbsp
+			</div>
+			<div id="formbox3">
+			<textarea name="message" style="height: 90%; width: 100%;"></textarea> <br>
+			<input type="submit" value="Send" id="send">
+			</div>
+		</form>
+	</div>
+
+<!-- ---------------JAVASCRIPT---------------- -->
+<script>
+	function openModule(page) {
+		var modules = ['about', 'shorts', '3dmodelling', 'scores', 'other'];
+		modules.forEach(hideModules);
+			function hideModules(value){
+				x = document.getElementById(value);
+				x.style.display = "none";
+			}
+		var module = document.getElementById(page);
+		module.style.display = "block";
+	}
+	
+</script>
+
+</body>
+</html>
