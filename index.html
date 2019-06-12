@@ -8,12 +8,11 @@
 
 
 <body>
-
+<script src="script.js"></script>
 <!-- -------------SIDEBAR---------------- -->
 	<div class="side">
-		<a href="index.html"> <img src="melogo.png" style="width: 60%; padding-bottom: 10%";></a>
+		<a href="index.html"> <img onclick="openModule('home')" src="melogo.png" style="width: 60%; padding-bottom: 10%";></a>
 		<h3 onclick="openModule('about')"> ABOUT </h3>
-		<h3 onclick="openModule('shorts')">SHORTS</h3>
 		<h3 onclick="openModule('3dmodelling')">3D MODELLING</h3>
 		<h3 onclick="openModule('scores')">SCORES</h3>
 		<h3 onclick="openModule('other')">OTHER</h3>
@@ -22,23 +21,91 @@
 			<a href="https://vimeo.com/user79958699"> <img src="vimeo.png"></a>
 		</div>
 	</div>
-
 <!-- --------------CONTENT----------------- -->
 	<div class="content"> 
+
+		<!-- HOME -->
+
+		<div id="home" style="display: block;">
+		<script>
+			var reel = makeCard('rect', '2019REEL','https://vimeo.com/314409093');
+			var AFTERSCHOOL = makeCard('sq', 'AFTERSCHOOL','https://vimeo.com/334665816');
+			var AFTS = makeCard('sq', 'AWAY FROM THE SAME','https://vimeo.com/306953737');
+			var STUMBLES = makeCard('sq', 'STUMBLES','https://vimeo.com/267406293');
+			var PHYLLIS = makeCard('sq', 'PHYLLIS CHASES A DREAM','https://vimeo.com/309223947');
+
+			document.getElementById("home").innerHTML = reel + AFTERSCHOOL + AFTS + STUMBLES + PHYLLIS;	
+		</script>
+		</div>
+
+		<!-- ABOUT -->
+
 		<div id="about" style="display: none;">
+			<img id="aboutportrait" src="MO-Animated.gif">
+			<div id="about1">
 			<h2> Memie Osuga </h2>
+			<h4 class="descriptors">animator<br>3D modeller<br>composer<br>creative</h4>
+			<h4> hello@memieosuga.com </h4>
+			</div>
+			<p> Memie is a Boston based animator, 3D modeller, composer and creative from New York City.  She's currently an undergrad at Harvard University in the Art, Film, and Visual Studies department trying to learn as much as she can.  Always happy to collaborate - do reach out! </p>
 		</div>
-		<div id="shorts" style="display: none;">
-			<h1> Shorts</h1>
-		</div>
+
+		<!-- 3D MODELLING -->
+
 		<div id="3dmodelling" style="display: none;">
-			<h1> 3D Modelling </h1>
+			<script>
+			var maintext = miscHtml('<h1> 3D Modelling </h1><h4> coming soon...</h4>')
+			var modelling = makeCard('rect', 'MODELLING','https://vimeo.com/322373086');
+
+			document.getElementById("3dmodelling").innerHTML = maintext + modelling;	
+		</script>
+
 		</div>
+
+		<!-- SCORES -->
+
 		<div id="scores" style="display: none;">
 			<h1> Scores </h1>
+				<h4>Smile, by James Blanchfield (2019)</h4></a> 
+					<iframe width="560" height="315" src="https://www.youtube.com/embed/5SEcHEcWbxU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+					<p>Timecodes: 0:41-1:50, 6:00-7:02, 7:44-8:00, 9:27-10:45</p>
+
+				<h4>Felicity, by Julia Lu (2019)</h4>
+				<h4>Afterschool, by Memie Osuga (2019)</h4>
+					<iframe src="https://player.vimeo.com/video/334665816?title=0&byline=0&portrait=0" width="640" height="360" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+					<p>Timecodes: 0-0:25, 3:00-4:56</p>
+				<h4>Glory, by Emily Choi, Julia Lu, and Memie Osuga (2019)</h4>
+					<iframe width="560" height="315" src="https://www.youtube.com/embed/tHyHYnuULmY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+					<p>Timecodes: 0:30-2:21</p>
+				<h4>Contact, by Memie Osuga (2019)</h4>
+					<iframe width="560" height="315" src="https://www.youtube.com/embed/j45oYgpr478" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+				<h4>Office Hours, by Jasi Lampkin (2018)</h4> 
+					<iframe width="560" height="315" src="https://www.youtube.com/embed/w7RGkfNXe2E?start=353" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+					<p>Timecode: 5:53-7:27</p>
+				<h4>Stumbles, by Memie Osuga (2018)</h4> 
+					<iframe src="https://player.vimeo.com/video/267406293?title=0&byline=0&portrait=0" width="640" height="360" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+
 		</div>
+
+		<!-- OTHER -->
+
 		<div id="other" style="display: none;">
 			<h1> Dabbling in other things </h1>
+			<hr>
+			<h1> Live Action </h1>
+			<div class="scroll_gallery"><div class="scroll_box">
+				<div class="scroll_youtube"><iframe class="scroll_inner" src="https://www.youtube.com/embed/j45oYgpr478" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"></iframe></div>
+				<div class="scroll_youtube"><iframe class="scroll_inner" src="https://www.youtube.com/embed/tHyHYnuULmY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"></iframe></div>
+				<div class="scroll_youtube"><iframe class="scroll_inner" src="https://www.youtube.com/embed/_Fj7g-uN5pM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"></iframe></div></div>
+			</div>
+			<hr>
+			<h1> Painting </h1>
+			<div class="scroll_gallery"><div class="scroll_box">
+				<div class="scroll_element"><img class="scroll_inner2" src="Paintings/8-Composition.jpg"></div>
+				<div class="scroll_element"><img class="scroll_inner2" src="Paintings/3-bathtub.jpg"></div>
+				<div class="scroll_element"><img class="scroll_inner2" src="Paintings/7-Blue Abstraction.jpg"></div>
+				<div class="scroll_element"><img class="scroll_inner2" src="Paintings/16-cello symphony.jpg"></div>
+			</div></div>
 		</div>
 	</div>
 
@@ -48,7 +115,8 @@
 		<p> SAY HELLO! </p>
 		<p style="font-size: .4em;"> &copy Copyright Memie Osuga 2019</p>
 		</div>
-		<form action="contact.php">
+
+		<form action="contact.php" method="post">
 			<div id="formbox1">
 			Your Name <input type="text" name="yourname" style= "width: 60%;"><br><br>
 			Your Email <input type="text" name="youremail" style= "width: 60%;">
@@ -57,26 +125,10 @@
 			Message &nbsp
 			</div>
 			<div id="formbox3">
-			<textarea name="message" style="height: 90%; width: 100%;"></textarea> <br>
-			<input type="submit" value="Send" id="send">
+			<textarea name="message" style="height: 90%; width: 100%;"></textarea><br>
+			<input type="submit" value="Submit" id="send">
 			</div>
 		</form>
 	</div>
-
-<!-- ---------------JAVASCRIPT---------------- -->
-<script>
-	function openModule(page) {
-		var modules = ['about', 'shorts', '3dmodelling', 'scores', 'other'];
-		modules.forEach(hideModules);
-			function hideModules(value){
-				x = document.getElementById(value);
-				x.style.display = "none";
-			}
-		var module = document.getElementById(page);
-		module.style.display = "block";
-	}
-	
-</script>
-
 </body>
 </html>

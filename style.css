@@ -2,17 +2,20 @@ body{
 	font-family: 'Heebo', sans-serif;
 }
 h1{
+/* used for every page title */
 	font-size: 2em;
 	font-weight: 200;
 	margin: 0;
 	text-transform: uppercase;
 }
 h2{
+/* used for about page title */
 	font-size: 2.2em;
 	font-weight: 300;
 	margin: 0;
 }
 h3{
+/* used for sidebar links */
 	color: #B3B3B3;
 	cursor: pointer;
 	font-size: 1.2em;
@@ -24,9 +27,23 @@ h3{
 h3:hover {
 	text-decoration: underline;
 }
+h4 { 
+/*just for about page subtitles */
+	font-size: 1.5em;
+	font-weight:100;
+	
+}
+p {
+	color: #B3B3B3;
+	font-size: .9em;
+	font-weight: 300;
+}
+a {
+	text-decoration: none;
+}
 
+/* **************SIDEBAR*************** */
 .side {
-	background-color: lavender;
 	margin: 10% 75% 0 10%;
 	position: fixed;
 	width: 15%;
@@ -41,14 +58,127 @@ h3:hover {
 	max-height: 100%;
 }
 
+/* **************CONTENT*************** */
 .content {
-	background-color: MistyRose;
-	height: 100%;
-	margin: 10% 10% 0 35%;
+	height: auto;
+	margin: 10% 10% 15% 35%;
 	overflow-y: auto;
-	position: fixed;
+	padding-bottom: 15%;
+	position: absolute;
 	width: 55%;
 }
+/* HOME */
+#home {
+	font-size: 0;
+}
+.home {
+	font-size: medium;
+}
+.container_rect {
+	position: relative;
+	width: 100%;
+}
+.container_sq {
+	display: inline-block;
+	position: relative;
+	width: 50%;
+}
+.container_sq:hover .overlay {
+	opacity: .8;
+}
+.overlay {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	height: 100%;
+	width: 100%;
+	opacity: 0;
+	transition: .5s ease;
+	background-color: black;
+}
+.text{
+	color: white;
+	font-size: xx-large;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	-webkit-transform: translate(-50%, -50%);
+	text-align: center;
+}
+.image {
+	display: relative;
+	width: 100%;
+	height: auto;
+}
+
+/* ABOUT */
+#aboutportrait {
+	display: inline-block;
+	height: 18em;
+}
+#about1 {
+	display: inline-block;
+	padding: 3%;
+	top: 0;
+}
+.descriptors {
+	color: #B3B3B3;
+	font-style: italic;
+}
+.descripBox {
+	display: inline-block;
+	height: 15em;
+	position: relative;
+	width: 50%;
+}
+p.description {
+	color: white;
+	font-size: .7em;
+	margin: 4%;
+}
+
+#scores {
+	overflow-x: hidden;
+}
+
+/* OTHER */
+#other {
+	overflow-x: hidden;
+	overflow-y: auto;
+}
+.scroll_gallery {
+	background-color: mintcream;
+	overflow-x: scroll;
+	overflow-y: hidden;
+	white-space: nowrap;
+	width: 100%;
+}
+.scroll_box {
+}
+.scroll_youtube {
+	position: relative;
+	width: 100%;
+	height: 0;
+	padding-bottom: 56.25%;
+	display: inline-block;
+}
+.scroll_element {
+	position: relative;
+	display: inline-block;
+}
+.scroll_inner2 {
+	height: 12em;
+}
+.scroll_inner {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+/* **************FOOTER*************** */
 
 .footer {
 	position: fixed;
@@ -89,7 +219,7 @@ form {
 	font-size: .4em;
 	height: 100%;
 }
-input, textarea, send, button {
+input, textarea {
 	border: none;
 	background-color: #333333;
 	color: white;
@@ -99,6 +229,7 @@ input, textarea, send, button {
 textarea{
 	resize: none;
 }
+
 /* SCROLLBAR ATTRIBUTES */
 /* width */
 ::-webkit-scrollbar {
