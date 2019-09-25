@@ -184,7 +184,7 @@ p.description {
 	position: fixed;
 	left: 0;
 	bottom: 0;
-	height: 15%;
+	height: 5%;
 	width: 100%;
 	background-color: black;
 	color: white;
@@ -195,39 +195,6 @@ p.description {
 	width: 15%;
 	position: absolute;
 
-}
-#formbox1 {
-	margin: 2% 60% 0 35%;
-	width: 20%;
-	position: absolute;
-	text-align: right;
-}
-#formbox2 {
-	margin: 2% 30% 0 65%;
-	width: 5%;
-	position: absolute;
-	text-align: right;
-}
-#formbox3 {
-	margin: 2% 10% 0 70%;
-	height: 40%;
-	width: 20%;
-	position: absolute;
-	text-align: right;
-}
-form {
-	font-size: .4em;
-	height: 100%;
-}
-input, textarea {
-	border: none;
-	background-color: #333333;
-	color: white;
-	font-family: 'Heebo', sans-serif;
-	font-size: .4em;
-}
-textarea{
-	resize: none;
 }
 
 /* SCROLLBAR ATTRIBUTES */
