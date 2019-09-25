@@ -190,6 +190,13 @@ p.description {
 	color: white;
 }
 
+#footertextbox {
+	height: 80%;
+	margin: 1% 75% 0 10%;
+	width: 15%;
+	position: absolute;
+
+}
 /* SCROLLBAR ATTRIBUTES */
 /* width */
 ::-webkit-scrollbar {
