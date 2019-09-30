@@ -1,6 +1,6 @@
 // this functions creates a multipage functionality
 function openModule(page) {
-		var modules = ['home', 'about', '3dmodelling', 'scores', 'other'];
+		var modules = ['home', 'about', 'scores', 'other'];
 		modules.forEach(hideModules);
 			function hideModules(value){
 				x = document.getElementById(value);
