@@ -1,150 +1,293 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-	<title>Memie Osuga</title>
-	<link rel="stylesheet" type="text/css" href="style.css">
-	<link href="https://fonts.googleapis.com/css?family=Heebo:100,300,400,500,700,800,900" rel="stylesheet">
-	<link rel="icon" href="melogo-favicon.png" type="image/png">
+    <link rel="stylesheet" type="text/css" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono&family=Space+Mono&display=swap" rel="stylesheet">
+
+    <link rel="icon" href="img/M1/3DIcon.png" type="image/png">
+
+    <script type = "text/javascript" src="script.js"></script>
 </head>
 
 
-<body>
-<script src="script.js"></script>
-<!-- -------------SIDEBAR---------------- -->
-	<div class="side" hidden>
-		<a href="index.html"> <img onclick="openModule('home')" src="melogo.png" style="width: 60%; padding-bottom: 10%";></a>
-		<h3 onclick="openModule('about')"> ABOUT </h3>
-		<!-- <h3 onclick="openModule('3dmodelling')">3D MODELLING</h3> -->
-		<h3 onclick="openModule('scores')">SCORES</h3>
-		<h3 onclick="openModule('other')">OTHER</h3>
-		<div class="socialicons">
-			<a href="https://www.artstation.com/memie"> <img src="artstation.png"> </a>
-			<a href="https://www.youtube.com/channel/UCOT-PLU-Odom9vtbaXi4s8A"> <img src="youtube.png"> </a>
-			<a href="https://vimeo.com/user79958699"> <img src="vimeo.png"></a>
-			<a href="https://www.instagram.com/memieosuga/"> <img src="instagram.png"></a>
-		</div>
-	</div>
-<!-- --------------CONTENT----------------- -->
-	<img src="2023-redesign-draft-01.png" href="https://memie.artstation.com/">
-	<div class="content" hidden> 
+<body onLoad="closeLoader()">
 
-		<!-- HOME -->
+    <!-- LOADING PAGE -->
+    <div class="loadingPage" id="loadingPage">
+        <script>
+            const dots = [[0, 40, 20, "infinite"], [750, 10, -20, "infinite"], [1500, 15, -40, "infinite"], [2250, 20, -20, "infinite"], [3000, -10, 20, "infinite"], [3750, -75, 40, "infinite"], [0, -105, 0, 0]];
+            for (let dot = 0; dot < 7; dot++) {
+                loadingDot(dots[dot][0], dots[dot][1], dots[dot][2], dots[dot][3]);
+            }
+        </script>
+    </div>
+    
+    <!-- MAIN PAGE -->
+    <div id="mainPage">
+        <div class="X1">
+            <img src="img/bg/finalFrame.png" class="bg">
+            <div id="M1">
+            <script>
+                const imgsM1 = ["meng","headDot","threeD","codeIcon"];
+                for (let img = 0; img < imgsM1.length; img++) {
+                    addImg(imgsM1[img], "M1");
+                }
+            </script>
+            </div>
+        </div>
+        <!-- ABOUT ME MODAL -->
+        <div class="modal" id="headDotModal">
+            <span class="close" onclick="closeModal('headDotModal')">&times;</span>
+            <div id="socialBox">
+                <script> generateSocialIcons("socialBox"); </script>
+            </div>
+            <br><br>
+            <p><span class="h3">Memie / 心萌</span> is a 3D artist + coder. She blends a technical + artistic background by making scripted tools to optimize 3D pipelines.</p>
+            <p>您好，我是心萌！我是學過3D動畫與電腦程式，目前把這兩個方面連起來，寫關於3D過程的程式和工具爲了提高效率</p><br>
+            <h3>PAST EXPERIENCE 經驗</h3>
+            <ul>
+            <li>3D Generalist @ studio2 兎子創意股彬有限公司 2022-2023</li>
+            <li>THINK TANK TRAINING CENTRE, CGI Asset Program, 2021</li>
+            <li>HARVARD UNIVERSITY 哈佛大學, B.A. Art, Film, and Visual Studies 2020</li>
+            <li>ZERO VFX, CGI Intern 2020</li>
+            <li>PEARL STUDIO 东方梦工厂, Creative Development Intern 2020</li>
+            <li>Short Film 'Afterschool' Boston Asian American Film Festival Grand Prix Winner 2019</li>
+            </ul>
+        </div>
 
-		<div id="home" style="display: block;">
-		<script>
-			var HNY21 = makeCard('rect', 'HAPPY NEW YEAR 2021', 'https://vimeo.com/496136490');
-			var KEEPINTOUCH = makeCard('sq','KEEP IN TOUCH','https://vimeo.com/411758254');
-			var WNY19 = makeCard('sq', 'WINTER IN NEW YORK','https://vimeo.com/382318670');
-			var AFTERSCHOOL = makeCard('sq', 'AFTERSCHOOL','https://vimeo.com/334665816');
-			var AFTS = makeCard('sq', 'AWAY FROM THE SAME','https://vimeo.com/306953737');
-			var STUMBLES = makeCard('sq', 'STUMBLES','https://vimeo.com/267406293');
-			var PHYLLIS = makeCard('sq', 'PHYLLIS CHASES A DREAM','https://vimeo.com/309223947');
 
-			document.getElementById("home").innerHTML = HNY21 + KEEPINTOUCH + WNY19 + AFTERSCHOOL + AFTS + STUMBLES + PHYLLIS;	
-		</script>
-		</div>
+        <div class="X2">
+            <img src="img/bg/Osuga-Final.png" class="bg">
+            <div id="M2">
+                <script>
+                    const imgsM2 = ["lello", "threeDEnviron"];
+                    for (let img = 0; img < imgsM2.length; img++) {
+                        addImg(imgsM2[img], "M2");
+                    }
+                </script>
+            <div id="parallelLabel"><span id="expand">&plus;</span>&#160; BG: 'Parallel' 3D Render | 2D Concept, Ture Ekroos   .</div>
+            </div>
+        </div>
+        
+        <!-- ENVIRONMENT MODALS -->
+        <div class="modal" id="lelloModal">
+            <span class="close" onclick="closeModal('lelloModal')">&times;</span>
+            <h3>Mystical Bookstore 魔法圖書館 - 3D Environment Project 3D場景作品</h3>
+            <p>This project was based off the incredible bookstore <i>Livraria Lello</i> in Porto, Portugal. All elements were modeled, UVd, textured, lit, rendered, and post-processed by me.</p>
+            <p>在葡萄牙有一家超級光華圖書館，它是這個作品的靈感。模型，貼圖，燈光設定，渲染，合成所有的部分都是我負責的。</p>
+            <div style="padding:56.25% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/571194766?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" style="position:absolute;top:0;left:0;width:100%;height:100%;" title="Mystical Bookstore | Memie Osuga 3D Environment Artist"></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>
+            <img src="img/M2/lello/icons-bigger.png" style="width: 80%;">
+            <img src="img/M2/lello/passes.png">
+            <p style="text-align: center;">Key AOVs 分圖層</p>
+            <img src="img/M2/lello/bookcase.png">
+            <img src="img/M2/lello/ceiling.png">
+            <img src="img/M2/lello/staircase.png">
+            <img src="img/M2/lello/staircase 2.png">
+            <h3>Procedural Book Shader 程序書貼圖設計</h3>
+            <p>The books and gold band designs were generated procedurally by using random combinations of different colors, multiple gold band patterns, and multiple bump texture patterns to create the illusion of many distinct books without having to hand paint each texture. Books were generated using MASH plus some hand placement. Afterwards, each book was given an object ID, and the textures were fed into a shader which would pick a different combination at random.</p>
+            <img src="img/M2/lello/book-setup.png">
+            <p> Some Mari passes for texturing: a combination of procedural and hand-painted work</p>
+            <img src="img/M2/lello/mari.png">
 
-		<!-- ABOUT -->
+        </div>
 
-		<div id="about" style="display: none;">
-			<img id="aboutportrait" src="MO-Animated.gif">
-			<div id="about1">
-			<h2> Memie Osuga </h2>
-			<h4 class="descriptors">animator<br>composer<br>creative</h4>
-			<h4> hey.memie@gmail.com </h4>
-			</div>
-			<p> Memie is an animator and creative from New York City.  She recently graduated from Harvard University with a degree in Art, Film, and Visual Studies. Her junior year 3D short about her earliest childhood memory, <a href="https://vimeo.com/334665816">Afterschool</a>, won the Short Waves Competition of the 2019 Boston Asian American Film Festival.
-				Memie started her animation journey spending way too many hours making animated and interactive graphics and ecards in Microsoft Powerpoint as a kid until she found Adobe Flash in high school, and later Blender and Autodesk Maya in college.  
-				A hardcore science kid for most of her life (think: Science Bowl, Intel, molecular bio research), she decided to specialize in animation in college when she realized she was already spending all of her free time learning and making animation and still wanted more.
-				<br><br>
-				When she's not animating, she's drawing assets or composing original music for her and her friends' work (Memie's parents are piano teachers and she attended music school basically since birth).
-				You can also find her dabbling in film, editing, and a bit of VFX.  And to counteract all those hours of sitting, she finds great joy in sport Taekwondo.
-			<br><br>
-			If you're interested in telling stories with a visual and/or audio component, or using captivating and accessible motion graphics to reach new audiences,
-			Memie wants to help make your vision a reality.  She cares deeply about all the work she creates, and will work to make the best video possible with her signature bright, refined, and appealing style.
-			She has a soft spot for animations and ideas that will make people stop and consider the world differently, or simply brighten a viewer's day.  Get in touch at hey.memie@gmail.com, and Memie will get back to you as soon as possible!</p>
-		</div>
+        <div class="X3">
+            <img src="img/bg/render152.png" class="bg">
+            <div id="M3">
+                <script>
+                    const imgsM3 = ["mulan", "bug", "rina"];
+                    for (let img = 0; img < imgsM3.length; img++) {
+                        addImg(imgsM3[img], "M3");
+                    }
+                </script>
+            </div>
+        </div>
 
-		<!-- 3D MODELLING -->
-<!--
-		<div id="3dmodelling" style="display: none;">
-			<script>
-			var maintext = miscHtml('<h1> 3D Modelling </h1><h4> coming soon...</h4>')
-			var modelling = makeCard('rect', 'MODELLING','https://vimeo.com/322373086');
 
-			document.getElementById("3dmodelling").innerHTML = maintext + modelling;	
-		</script>
+        <!-- CHARACTER MODALS -->
+        <div class="modal" id="mulanModal">
+            <span class="close" onclick="closeModal('mulanModal')">&times;</span>
+            <h3>Mulan Reimagined - 小花木蘭</h3>
+            <p> This project was inspired by Olga Esther's painting 'Mulan'. I was struck by the quiet sadness of the original painting, and how it captured something essential about the character. Responsible for all aspects: sculpting, modeling, texturing, groom, lighting, renders.</p>
+            <img src="img/M3/mulan/flower.png">
+            <img src="img/M3/mulan/full.png">
+            <img src="img/M3/mulan/facedrago-double.png">
+            <video width="100%" autoplay loop muted>
+                <source src="img/M3/mulan/turntable.mp4">
+            </video>
+            
+        </div>
+        <div class="modal" id="bugModal">
+            <span class="close" onclick="closeModal('bugModal')">&times;</span>
+            <h3>Butterfluff</h3>
+            <p>This was a personal project, with this bug-like creature as the main character who escapes darkness to get to the light. I modeled 3 separate environments for this; sculpted, modeled, textured, and rigged the bug; and then rendered and composited everything.</p>
+            <img src="img/M3/bug/autoControl.gif">
+            <p>Rigging controls were added to automate the wing flaps and breathing of the bug, which could be adjusted using keys.</p>
+            <img src="img/M3/bug/otherControls.gif">
+            <p>Additional Rig Setup: skeleton, FK/IK controllers, blend shapes, skinning</p>
+            <h3>Short Demos</h3>
+            <img src="img/M3/bug/bugDemos.gif">
+            <h3>Animated Short</h3>
+            <p>Used this rig + 3 unique environments + original music in this personal animated short</p>
+            <div style="padding:56.25% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/496136490?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" style="position:absolute;top:0;left:0;width:100%;height:100%;" title="Happy New Year 2021!"></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>
+            <h3>Stills</h3>
+            <p>Modeled a lot of low-poly buildings to give the impression of a 'global village' street, including various Western + Eastern inspired building styles. Bug's desing started as a 2D sketch</p>
+            <img src="img/M3/bug/preProd.png">
+            <p>Mushrooms were shaded and illuminated procedurally. This way, they started to glow in a similar pattern, but the rate at which they turned on could be controlled centrally using expressions, so there was no need to key individual mushrooms and set their timing manually. Here I tried several color variations before settling on the look in the final animation. </p>
+            <img src="img/M3/bug/mushrooms.png">
+        </div>
 
-		</div>
--->
-		<!-- SCORES -->
+        <div class="X4">
+            <img src="img/bg/greenBldgs.png" class="bg">
+            <div id="M4">
+                <div class="M4box" id="mel">
+                    <img class="headerImg" src="img/M4/mayaGlow.png"><h1>MAYA MEL</h1>
+                    <script>
+                        addCodeBox("mel","maya","assorted maya scripts","assorted");
+                        // addCodeBox("mel","maya","procedural screw generator","screwGenerator");
+                        addCodeBox("mel","maya","convert to arnold","convertToArnold");
+                        //addCodeBox("mel","maya","light color randomizer","lightColorRandomizer");
+                        addCodeBox("mel","lock","production render tools","renderTools");
+                    </script>
+                </div>
+                <div class="M4box" id="python">
+                    <img class="headerImg" src="img/M4/pythonGlow.png"><h1>PYTHON</h1>
+                    <script>
+                        addCodeBox("python","python","asset library generator","library");
+                        addCodeBox("python","python","standardized file generator","fileGenerator");
+                        addCodeBox("python","python","file export automator","exportAutomator");
+                        addCodeBox("python","python","render organization management","aovChecker");
+                    </script>
+                </div>
+                <div class="M4box" id="aejs">
+                    <img class="headerImg" src="img/M4/aeGlow.png"><h1>AFTER EFFECTS</h1>
+                    <script>
+                        addCodeBox("aejs","lock","Production Batch Importer","batchImport");
+                    </script>
+                </div>                
+            </div>
+        </div>
 
-		<div id="scores" style="display: none;">
-			<h1> Scores </h1>
-				<h4>Word Dreams, by Memie Osuga (2019)</h4>
-					<iframe width="560" height="315" src="https://www.youtube.com/embed/qyI2LwZN6_U" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-					<p>Timecodes: 0:36-1:22</p>
-				<h4>Smile, by James Blanchfield (2019)</h4>
-					<iframe width="560" height="315" src="https://www.youtube.com/embed/5SEcHEcWbxU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-					<p>Timecodes: 0:41-1:50, 6:00-7:02, 7:44-8:00, 9:27-10:45</p>
+        <!-- CODE MODALS -->
+        <!-- ASSORTED MODAL -->
+        <div class="modal" id="assortedModal">
+            <script>closeModalX('assortedModal')</script>
+            <p>A collection of various helpful small maya scripts and functions that aren't included in the standard MEL library.</p>
+            <!-- script 1 -->
+            <h3>Push elements onto string arrays</h3>
+            <div class="codeSnippet" id="strArrAddBox">
+                <script>copyCode("strArrAdd");</script>
+                <span id="strArrAdd" class="codeRaw">
+global proc pushStr(string $array[], string $add){
+    $array[size($array)] = $add;
+}
+                </span>
+            </div>
 
-				<h4>Felicity, by Julia Lu (2019)</h4>
-				<h4>Afterschool, by Memie Osuga (2019)</h4>
-					<iframe src="https://player.vimeo.com/video/334665816?title=0&byline=0&portrait=0" width="640" height="360" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
-					<p>Timecodes: 0-0:25, 3:00-4:56</p>
-				<h4>Glory, by Emily Choi, Julia Lu, and Memie Osuga (2019)</h4>
-					<iframe width="560" height="315" src="https://www.youtube.com/embed/tHyHYnuULmY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-					<p>Timecodes: 0:30-2:21</p>
-				<h4>Contact, by Memie Osuga (2019)</h4>
-					<iframe width="560" height="315" src="https://www.youtube.com/embed/j45oYgpr478" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-				<h4>Office Hours, by Jasi Lampkin (2018)</h4> 
-					<iframe width="560" height="315" src="https://www.youtube.com/embed/w7RGkfNXe2E?start=353" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-					<p>Timecode: 5:53-7:27</p>
-				<h4>Stumbles, by Memie Osuga (2018)</h4> 
-					<iframe src="https://player.vimeo.com/video/267406293?title=0&byline=0&portrait=0" width="640" height="360" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+            <!-- script 2 -->
+            <h3>Select all polygons within a group/hierarchy</h3>
+            <p>PROBLEM: using the viewport to select can be slow with large scenes. Using the outliner, it's easy to select groups but more annoying to select individual shapes.</p>
+            <p>SOLUTION: this script allows you to select all visible polygon meshes within a group straight from the outliner</p>
+            <div class="codeSnippet" id="selectVisiblePolysBox">
+                <script>copyCode("selectVisiblePolys");</script>
+                <span id="selectVisiblePolys" class="codeRaw">
+proc selectVisPoly(){
+    select -visible `filterExpand -sm 12`;
+}
+                </span>
+            </div>
 
-		</div>
+            <!-- script 3 -->
+            <h3>Add to all legacy render layers</h3>
+            <div class="codeSnippet" id="addToAllBox">
+                <script>copyCode("addToAll");</script>
+                <span id="addToAll" class="codeRaw">
+// adds the selected geometry to all render layers
+proc add(){
+    string $rdrLyrs[] = `ls -type renderLayer`;
+    string $rdrLyr;
+    string $geo[] = `ls -sl`;
+    for ($rdrLyr in $rdrLyrs){
+        editRenderLayerMembers ($rdrLyr) ($geo);
+    }
+}
+                </span>
+            </div>
 
-		<!-- OTHER -->
+        </div>
+        <!-- CONVERT TO ARNOLD MODAL -->
+        <div class="modal" id="convertToArnoldModal">
+            <script>closeModalX('convertToArnoldModal')</script>
+            <h3>Convert Lambert Materials to Arnold</h3>
+            <p>PROBLEM: When maya converts materials to arnold, it doesn't automatically port the settings, such as any files connected to the diffuse.</p>
+            <p>SOLUTION: This script automatically attaches any files associated with color, transparency, and incadescence</p>
+            <div class="codeSnippet" id="convertToArnoldBox">
+                <script>copyCode("convertToArnold");</script>
+                <span id="convertToArnold" class="codeRaw">
+proc createAIMtl(string $name){
+    shadingNode -asShader "aiStandardSurface" -name ($name);
+    setAttr ($name + ".base") 1;
+    setAttr ($name + ".specular") 0;
+    setAttr ($name + ".thinWalled") 1;
+}
 
-		<div id="other" style="display: none;">
-			<h1> Dabbling in other things </h1>
-			<hr>
-			<h1> Live Action </h1>
-			<div class="scroll_gallery"><div class="scroll_box">
-				<div class="scroll_youtube"><iframe class="scroll_inner" src="https://player.vimeo.com/video/378940216" frameborder="0" allow="autoplay;"></iframe></div>
-				<div class="scroll_youtube"><iframe class="scroll_inner" src="https://www.youtube.com/embed/qyI2LwZN6_U" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"></iframe></div>
-				<div class="scroll_youtube"><iframe class="scroll_inner" src="https://www.youtube.com/embed/0KVBc5Fy7SU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"></iframe></div>
-				<div class="scroll_youtube"><iframe class="scroll_inner" src="https://www.youtube.com/embed/j45oYgpr478" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"></iframe></div>
-				<div class="scroll_youtube"><iframe class="scroll_inner" src="https://www.youtube.com/embed/tHyHYnuULmY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"></iframe></div>
-				<div class="scroll_youtube"><iframe class="scroll_inner" src="https://www.youtube.com/embed/_Fj7g-uN5pM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"></iframe></div>
-				</div>
-			</div>
-			<hr>
-			<h1> Painting </h1>
-			<div class="scroll_gallery"><div class="scroll_box">
-				<div class="scroll_element"><img class="scroll_inner2" src="Paintings/8-Composition.jpg"></div>
-				<div class="scroll_element"><img class="scroll_inner2" src="Paintings/3-bathtub.jpg"></div>
-				<div class="scroll_element"><img class="scroll_inner2" src="Paintings/9-Bubble Tea.jpg"></div>
-				<div class="scroll_element"><img class="scroll_inner2" src="Paintings/7-Blue Abstraction.jpg"></div>
-				<div class="scroll_element"><img class="scroll_inner2" src="Paintings/16-cello symphony.jpg"></div>
-				<div class="scroll_element"><img class="scroll_inner2" src="Paintings/4-model in an uncertain world.jpg"></div>
-				<div class="scroll_element"><img class="scroll_inner2" src="Paintings/2-Pipe World.jpg"></div>
-			</div></div>
-			<h1> 3D Modeling </h1>
-			<div class="scroll_gallery"><div class="scroll_box">
-				<div class="scroll_element"><img class="scroll_inner2" src="3D/piano-demo-blue.png"></div>
-				<div class="scroll_element"><img class="scroll_inner2" src="3D/miru-chair.png"></div>
-				<div class="scroll_element"><img class="scroll_inner2" src="3D/coffeeshop2.jpg"></div>
-			</div></div>
-		</div>
-	</div>
+proc changeToArnold(){
+    string $sel[]= `ls -sl`;
+    string $s;
+    for ($s in $sel){
+        string $shapeName[] = `listRelatives -s $s`;
+        setAttr ($shapeName[0] + ".aiOpaque") 0;
+        string $shadingGrp[] = `listConnections -type "shadingEngine" $shapeName[0]`;
+        string $lambertMtl[] = `listConnections -type "lambert" $shadingGrp[0]`;
+        if (`size($lambertMtl)` == 0){
+            continue;
+        }
+        
+        string $colorConnection;
+        if (`connectionInfo -sfd ($lambertMtl[0] + ".color")` == ""){
+            $colorConnection = `connectionInfo -sfd ($lambertMtl[0] + ".incandescence")`;
+        }
+        else{
+            $colorConnection = `connectionInfo -sfd ($lambertMtl[0] + ".color")`;
+        }
+        string $alphaConnection = `connectionInfo -sfd ($lambertMtl[0] + ".transparency")`;
+        
+        if (`objExists ($lambertMtl[0] + "_aiMtl")` == false){
+            createAIMtl($lambertMtl[0] + "_aiMtl");
+            select ($lambertMtl[0] + "_aiMtl");
+            connectAttr $colorConnection ($lambertMtl[0] + "_aiMtl.baseColor");
+            connectAttr $alphaConnection ($lambertMtl[0] + "_aiMtl.opacity");
+            disconnectAttr ($lambertMtl[0] + ".outColor") ($shadingGrp[0] + ".surfaceShader");
+            connectAttr ($lambertMtl[0] + "_aiMtl.outColor") ($shadingGrp[0] + ".surfaceShader");
+        }
+        
+    }
+}
+            </span>
+            </div>
+        </div>
 
-<!-- ----------------FOOTER------------ -->
-	<div class="footer"> 
-		<div id="footertextbox">
-		<p style="font-size: .4em;"> &copy Copyright Memie Osuga 2020</p>
-		</div>
-	</div>
+    </div>
+
+    
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer" id="footer">
+            <script>
+                generateSocialIcons("footer");
+            </script>
+            <p> hey.memie@gmail.com</p><br><br>
+            <p style="font-size: .6em; color: #3f393f;"> copyright 2023 © memie osuga</p>
+        </div>  
+    </footer>
+
 </body>
+
+
 </html>
+
