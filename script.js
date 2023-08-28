@@ -20,9 +20,15 @@ function addImg(imgName, section){
 }
 
 // CODE EXAMPLES
-function addCodeBox(blockBox, symbol, name, short){
+function addCodeBox(blockBox, symbol, name, short, url){
     var html = '<div class="codeBox" onclick="showModal(\''+ short + '\')"><img class="glowIcon" src="img/M4/' + symbol + 'Glow.webp">&#160;' + name + '</div>';
+    if (url !== undefined){
+        html = '<div class="codeBox" onclick="openPage(\''+ url + '\')"><img class="glowIcon" src="img/M4/' + symbol + 'Glow.webp">&#160;' + name + '</div>';
+    }
     document.getElementById(blockBox).innerHTML += html;               
+}
+function openPage(url){
+    window.location.href = url;
 }
 // for code snippets
 function copyCode(code){
@@ -83,16 +89,9 @@ function authenticate() {
     const userPassword = passwordInput.value;
     const divKey = "renderToolsInner"; // The key for the hidden div in PHP
     
-    fetch('authenticate.php', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/x-www-form-urlencoded',
-        },
-        body: `password=${encodeURIComponent(userPassword)}&div=${encodeURIComponent(divKey)}`
-    })
-    .then(response => response.text())
-    .then(result => {
-        if (result === "authenticated") {
+    const correctPassword = "openTheDoor";
+        
+        if (userPassword === correctPassword) {
             hiddenDiv.style.display = "block";
             wrongPasswordMsg.style.display = "none";
             passwordForm.style.display = "none"; // Hide the password form
@@ -101,8 +100,4 @@ function authenticate() {
             hiddenDiv.style.display = "none";
             wrongPasswordMsg.style.display = "block";
         }
-    })
-    .catch(error => {
-        console.error('Error:', error);
-    });
 }
