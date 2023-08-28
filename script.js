@@ -15,13 +15,13 @@ function loadingDot(delay, left, top, count) {
 
 // LOAD IMAGES PER SECTION AND ASSIGNS IDS
 function addImg(imgName, section){
-    var html = '<img src="img/' + section + '/' + imgName + '.png" id="' + imgName+ '" style="max-width: 100%; position: absolute" onclick="showModal(\'' + imgName +'\')">';
+    var html = '<img src="img/' + section + '/' + imgName + '.webp" id="' + imgName+ '" style="max-width: 100%; position: absolute" onclick="showModal(\'' + imgName +'\')">';
     document.getElementById(section).innerHTML += html;
 }
 
 // CODE EXAMPLES
 function addCodeBox(blockBox, symbol, name, short){
-    var html = '<div class="codeBox" onclick="showModal(\''+ short + '\')"><img class="glowIcon" src="img/M4/' + symbol + 'Glow.png">&#160;' + name + '</div>';
+    var html = '<div class="codeBox" onclick="showModal(\''+ short + '\')"><img class="glowIcon" src="img/M4/' + symbol + 'Glow.webp">&#160;' + name + '</div>';
     document.getElementById(blockBox).innerHTML += html;               
 }
 // for code snippets
@@ -67,7 +67,7 @@ function generateSocialIcons(section){
     const socials = ['artstation','instagram','linkedin'];
 
     for (let n = 0; n < socials.length; n++) {
-        var singleLink = '<a href="' + links[n] + '" target="_blank" class="socials"> <img src="img/social/' + socials[n] + '.png"></a>'
+        var singleLink = '<a href="' + links[n] + '" target="_blank" class="socials"> <img src="img/social/' + socials[n] + '.webp"></a>'
         document.getElementById(section).innerHTML += singleLink
     }
     
@@ -76,6 +76,6 @@ function generateSocialIcons(section){
 
 // NOT USED ANYMORE, MAY NEED TO DELETE
 function bgImg(imgName){
-    var html = '<img class="bg" src="img/bg/' + imgName + '.png">';
+    var html = '<img class="bg" src="img/bg/' + imgName + '.webp">';
     document.getElementById("bgContainer").innerHTML += html;
 }
