@@ -231,10 +231,13 @@ p {
     background-color: rgb(48, 48, 48);
     padding: 3em;
     color:#d1d1d1;
+    overflow-x: scroll;
+    line-height: 1;
 }
 .codeRaw{
-    white-space: pre-wrap;
+    white-space: preserve nowrap;
     font-family: 'Courier New', Courier, monospace;
+    font-size: .8em;
 }
 .copyIcon{
     height: 20px;
@@ -273,6 +276,33 @@ p {
 @keyframes copied{
     0%{opacity: 100;}
     100%{opacity: 0;}
+}
+/* PASSWORD PROTECTED */
+#password-form input[type="password"] {
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    width: 200px;
+    box-sizing: border-box;
+    z-index: 3;
+    font-family: 'Space Mono';
+    background-color: #262626;
+    display: block;
+    margin: auto;
+}
+#password-form button{
+    border: none;
+    font-family: 'Space Mono';
+    margin: auto;
+    display: block;
+    background-color: #323e80;
+    padding: 10px;
+}
+#password-form button:hover{
+    filter: brightness(1.5);
+}
+.hidden{
+    display: none;
 }
 
 /* SPOTLIGHT */

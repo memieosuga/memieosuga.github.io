@@ -180,6 +180,22 @@
         </div>
 
         <!-- CODE MODALS -->
+        <!-- PROTECTED MODAL -->
+        <div class="modal" id="renderToolsModal" loading="lazy">
+                <script>closeModalX('renderToolsModal')</script>
+                <form id="password-form">
+                    <br><br><br>
+                    <input type="password" id="password-input" placeholder="Enter password">
+                    <br>
+                    <button type="button" onclick="authenticate()">Submit</button>
+                </form>
+                <div id="renderToolsInner" class="hidden">
+                    <!-- only displayed after authentication not sure why we have 2 classes -->
+                    <p> hi </p>                    
+                </div>
+                <!-- shown if password is wrong -->
+                <p id="wrong-password-msg" class="hidden">Wrong password. Please try again.</p>
+        </div>
         <!-- ASSORTED MODAL -->
         <div class="modal" id="assortedModal" loading="lazy">
             <script>closeModalX('assortedModal')</script>

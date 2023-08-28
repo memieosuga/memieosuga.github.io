@@ -73,9 +73,36 @@ function generateSocialIcons(section){
     
 }
 
-
-// NOT USED ANYMORE, MAY NEED TO DELETE
-function bgImg(imgName){
-    var html = '<img class="bg" src="img/bg/' + imgName + '.webp">';
-    document.getElementById("bgContainer").innerHTML += html;
+// PASSWORD PROTECTION
+function authenticate() {
+    const passwordInput = document.getElementById("password-input");
+    const hiddenDiv = document.getElementById("renderToolsInner");
+    const wrongPasswordMsg = document.getElementById("wrong-password-msg");
+    const passwordForm = document.getElementById("password-form");
+    
+    const userPassword = passwordInput.value;
+    const divKey = "renderToolsInner"; // The key for the hidden div in PHP
+    
+    fetch('authenticate.php', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/x-www-form-urlencoded',
+        },
+        body: `password=${encodeURIComponent(userPassword)}&div=${encodeURIComponent(divKey)}`
+    })
+    .then(response => response.text())
+    .then(result => {
+        if (result === "authenticated") {
+            hiddenDiv.style.display = "block";
+            wrongPasswordMsg.style.display = "none";
+            passwordForm.style.display = "none"; // Hide the password form
+        } 
+        else {
+            hiddenDiv.style.display = "none";
+            wrongPasswordMsg.style.display = "block";
+        }
+    })
+    .catch(error => {
+        console.error('Error:', error);
+    });
 }
