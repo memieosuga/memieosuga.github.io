@@ -277,7 +277,7 @@ p {
     0%{opacity: 100;}
     100%{opacity: 0;}
 }
-/* PASSWORD PROTECTED */
+/* PASSWORD PROTECTED update */
 #password-form input[type="password"] {
     padding: 10px;
     border: none;
