@@ -136,7 +136,7 @@ p {
     display: flex;
     justify-content: center;
 }
-#memi{ top: 35%; height: 25%;}
+#memi{ top: 35%; height: 15%;}
 #headDot{ height: 12%; left: 2.5%; top: 5%;}
 #threeD{ margin-right: 10%; top: 57%; height: 15%;}
 #threeD:hover{animation: wiggle 300ms infinite;}
