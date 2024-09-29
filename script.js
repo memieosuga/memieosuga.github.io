@@ -4,14 +4,23 @@ function closeLoader(){
     const dots = [[0, 40, 20, 1], [0, 10, -20, 1], [0, 15, -40, 1], [0, 20, -20, 1], [0, -10, 20, 1], [0, -75, 40, 1], [0, -105, 0, 1]];
     for (let dot = 0; dot < 7; dot++) {
         loadingDot(dots[dot][0], dots[dot][1], dots[dot][2], dots[dot][3]);
-        }
-    setTimeout("document.getElementById('loadingPage').style.animation = 'loadFade ease-out 2s 1 forwards';", 1200);
+    }
+    setTimeout(removeLoader, 3200); // Increased timeout to 3200ms (2000ms animation + 1200ms delay)
 }
 
 function loadingDot(delay, left, top, count) {
-	var html = '<span class="loadDot" style="animation-delay: ' + delay + 'ms; left: ' + left + 'px; top: ' + top + 'px; animation-iteration-count: ' + count + ';"></span>';
+    var html = '<span class="loadDot" style="animation-delay: ' + delay + 'ms; left: ' + left + 'px; top: ' + top + 'px; animation-iteration-count: ' + count + ';"></span>';
     document.getElementById("loadingPage").innerHTML += html;
 }
+
+function removeLoader() {
+    const loadingPage = document.getElementById('loadingPage');
+    loadingPage.style.display = 'none';
+    document.body.classList.remove('loading');
+}
+
+// Call closeLoader when the page is fully loaded
+window.addEventListener('load', closeLoader);
 
 // LOAD IMAGES PER SECTION AND ASSIGNS IDS
 function addImg(imgName, section){
