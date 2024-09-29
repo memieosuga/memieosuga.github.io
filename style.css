@@ -25,6 +25,14 @@ p {
 /* SUB ELEMENTS */
 
 /* LOADER */
+
+body.loading {
+    overflow: hidden;
+}
+
+#loadingPage {
+    display: flex;
+}
 .loadingPage{
     z-index: 100;
     display: flex;
