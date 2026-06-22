@@ -78,7 +78,7 @@ function closeModalX(modalName){
 
 // GENERATE SOCIAL ICONS
 function generateSocialIcons(section){
-    const links = ['https://memie.artstation.com','https://instagram.com/memieosuga','https://www.linkedin.com/in/memieosuga/'];
+    const links = ['https://memie.artstation.com','https://instagram.com/memieosuga','https://www.linkedin.com/in/mosuga/'];
     const socials = ['artstation','instagram','linkedin'];
 
     for (let n = 0; n < socials.length; n++) {
